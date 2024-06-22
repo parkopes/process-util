@@ -4,3 +4,7 @@ plugins {
 
 group = 'net.jezevcik'
 version = '1.0-SNAPSHOT'
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
