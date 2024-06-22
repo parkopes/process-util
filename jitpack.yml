@@ -1,5 +1,2 @@
 jdk:
-  - openjdk21
-before_install:
-  - sdk install java 22.0.1-graal
-  - sdk use java 22.0.1-graal
+  - openjdk17
