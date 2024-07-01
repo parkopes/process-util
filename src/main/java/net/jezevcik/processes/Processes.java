@@ -42,8 +42,8 @@ public class Processes {
                         , sessionName = line.substring(columns[1], columns[2]).trim()
                         , session = line.substring(columns[2], columns[3]).trim();
 
-                processInformation.add(new ProcessInformation(name, Long.parseLong(pid), sessionName, Integer.parseInt(session)
-                        , memory.equals("N/A") ? -1 : Long.parseLong(memory.substring(0, memory.length() - 2).replace(",", "").trim())));
+                processInformation.add(new ProcessInformation(name, Long.parseLong(pid), sessionName, Integer.parseInt(session.replaceAll("[^0-9]", ""))
+                        , memory.equals("N/A") ? -1 : Long.parseLong(memory.substring(0, memory.length() - 2).replaceAll("[^0-9]", "").trim())));
             }
         }
 
